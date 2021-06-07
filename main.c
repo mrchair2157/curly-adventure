@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include "basic.h"
 #include "info.h"
 int x = 0;
 char operator;
