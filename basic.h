@@ -1,9 +1,13 @@
 #include <math.h>
 #include <stdbool.h>
-long double a,b,c;
 
 
-int addition(long double a,long double b) {
-a + b == c;
+
+int addition(double a,double b) {
+double c = a + b;
+printf("%lf + %lf = %lf\n",a,b,c);
 return c;
 }
+
+
+
