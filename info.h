@@ -1,9 +1,9 @@
-//this file is for information that is too large to reasanable fit cleanly in main.c
+//this file is for information that is too large to reasonable fit cleanly in main.c
 #include <stdio.h>
 int MathModePrint() {
     printf("Math mode (when on) will set your first number to the answer of your previous number kinda like online calculator\n");
     printf("in math mode will will only get to set your first number once\n");
-    printf("please enter 1 or 2 for math mode on or off respectivly: \n");
+    printf("please enter 1 or 2 for math mode on or off respectively: \n");
 }
 int NumberSelection(bool mode) {
     double x;
@@ -12,7 +12,7 @@ int NumberSelection(bool mode) {
     
     }
     else {
-    printf("please enter your first number, after this you will only be promted for a second number: \n");
+    printf("please enter your first number, after this you will only be promoted for a second number: \n");
     }
     scanf("%lf",&x);
     printf("please enter your second number: \n");
@@ -23,11 +23,9 @@ int help() {
     printf("h is for help and this is it.\n"                            );
     printf("q to quite.\n"                                              );
     printf("x is to toggle the Math Mode after selection\n"             );
-    printf("+ for addition.\n"                                          );
     printf("n is to change your numbers"                                );
-    //printf("- for subraction.\n"                                      );
-    //printf("* for multiplication.\n"                                  );
-    //printf("/ for division.\n"                                        );
-    //printf("%c for a remainder from a devision.\n",0x25               );
-    //printf("a for advanced, coming soon\n"                            );
+    printf("+ for addition.\n"                                          );
+    printf("- for subtraction.\n"                                       );
+    printf("* for multiplication.\n"                                    );
+    printf("/ for division.\n"                                          );
 }

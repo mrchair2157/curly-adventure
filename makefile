@@ -11,3 +11,7 @@ main.o: main.c info.h basic.h
 clean:
 	rm *.o
 	rm celc
+git:
+	git pull
+	git commit -a
+	git push origin main
