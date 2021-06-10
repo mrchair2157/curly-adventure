@@ -18,7 +18,7 @@ int main() {
 //read info.h's mathmode function to learn what mathmode does
 
 //proscesses mathmode
-mathmode();
+MathModePrint();
 scanf("%i",&MathModeSelector);
 if(MathModeSelector == 1) {
      MathMode = true;
@@ -26,7 +26,7 @@ if(MathModeSelector == 1) {
 else {
      MathMode = false;
 }
-Numbers[0] = NumberSelection(mathmode);
+Numbers[0] = NumberSelection(MathMode);
 scanf("%lf",&Numbers[1]);
 
 //main loop function
@@ -61,8 +61,32 @@ scanf("%c1",&operator);
     
     }
 
-//for the universal switch statmens
+//for the universal switch statmens, quite, help, toggles,a,d number selection
 switch(operator) {
+    case 'h':
+        help();
+        x = -1;
+        break;
+    
+    
+    case 'q':
+    return 0;
+    
+    case 'n':
+    if(MathMode == true) {
+        printf("enter a number: ");
+        scanf("%d",&Numbers[0]);
+    }
+    else {
+        printf("debug remove, %d %d\n",Numbers[0],Numbers[1]);
+        printf("enter number 1: ");
+        scanf("%d",&Numbers[0]);
+        printf("enter number 2: ");
+        scanf("%d",&Numbers[1]);
+        printf("debug remove, %d %d\n",Numbers[0],Numbers[1]);
+    }
+    break;
+    
     case 'x':
     if(MathMode == true) {
         MathMode = false;
@@ -83,15 +107,7 @@ switch(operator) {
         enabled = true;
     }
     
-    break;
-    
-    case 'q':
-    return 0;
-
-    case 'h':
-    help();
-    x = -1;
-    break;
+    break;    
 }
 //after 5 trys if help is needed then it will give them the help option
 //note make it toggleable with the defuilt of being on, done :^)

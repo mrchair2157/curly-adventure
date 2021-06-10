@@ -8,6 +8,3 @@ double c = a + b;
 printf("%lf + %lf = %lf\n",a,b,c);
 return c;
 }
-
-
-
