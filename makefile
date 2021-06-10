@@ -13,5 +13,7 @@ clean:
 	rm celc
 git:
 	git pull
+	echo ctrl-c to stop you have 15 seconds
+	sleep 15
 	git commit -a
 	git push origin main
