@@ -1,7 +1,7 @@
 CC=gcc
 flags=-o
 object=-c
-
+extras=-Wall -Wextra -pedantic
 celc: main.o 
 	$(CC) main.o $(flags) celc
 
@@ -13,7 +13,7 @@ clean:
 	rm celc
 git:
 	git pull
-	echo ctrl-c to stop you have 15 seconds
+	git status
 	sleep 15
 	git commit -a
 	git push origin main

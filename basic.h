@@ -1,3 +1,6 @@
+#ifndef __basic_h__
+#define __basic_h__
+
 #include <math.h>
 #include <stdbool.h>
 #include <stdio.h>
@@ -25,4 +28,4 @@ double c = a / b;
 printf("%lf / %lf = %lf\n",a,b,c);
 return c;
 }
-
+#endif 

@@ -128,7 +128,7 @@ switch(operator) {
         enabled = true;
     }
     
-    break;    
+    break;
 }
 //after 5 tries if help is needed then it will give them the help option
 //note make it toggleable with the default of being on, done :^)

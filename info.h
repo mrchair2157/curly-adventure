@@ -1,3 +1,6 @@
+#ifndef __info_h__
+#define __info_h__
+
 //this file is for information that is too large to reasonable fit cleanly in main.c
 #include <stdio.h>
 int MathModePrint() {
@@ -29,3 +32,4 @@ int help() {
     printf("* for multiplication.\n"                                    );
     printf("/ for division.\n"                                          );
 }
+#endif
