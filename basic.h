@@ -4,28 +4,24 @@
 #include <math.h>
 #include <stdbool.h>
 #include <stdio.h>
+int operation(char operator,double n1,double n2){
+    double n3;
+    switch (operator) {
+    case '+':
+       n3 = n1 + n2;
+       break;
+    case '-':
+       n3 = n1 - n2;
+       break;
+     case '*':
+       n3 = n1 * n2;
+       return n3;
+     case '/':
+       n3 = n1 / n2;
+       break;
 
-int addition(double a,double b) {
-double c = a + b;
-printf("%lf + %lf = %lf\n",a,b,c);
-return c;
-}
+            }
 
-int subtraction(double a,double b) {
-double c = a - b;
-printf("%lf - %lf = %lf\n",a,b,c);
-return c;
+       return n3;
 }
-
-int multiplication(double a,double b) {
-double c = a * b;
-printf("%lf * %lf = %lf\n",a,b,c);
-return c;
-}
-
-int division(double a,double b) {
-double c = a / b;
-printf("%lf / %lf = %lf\n",a,b,c);
-return c;
-}
-#endif 
+#endif

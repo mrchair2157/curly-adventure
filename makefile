@@ -1,12 +1,10 @@
 CC=gcc
 flags=-o
-object=-c
 extras=-Wall -Wextra -pedantic
-celc: main.o 
-	$(CC) main.o $(flags) celc
 
-main.o: main.c info.h basic.h
-	$(CC) $(object) main.c
+celc: main.c info.h basic.h
+	$(CC) main.c basic.h info.h $(flags) celc $(extras)
+
 
 clean:
 	rm *.o
