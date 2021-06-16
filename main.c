@@ -76,6 +76,7 @@ switch(operator) {
         printf("number 1 %lf\n",Numbers[0]);
         printf("number 2 %lf\n",Numbers[1]);
         printf("lastest answer is %lf\n",Numbers[2]);
+        break;
     case 'x':
     if(MathMode == true) {
         MathMode = false;
@@ -83,7 +84,7 @@ switch(operator) {
     }
     else {
         MathMode = true;
-    }
+   }
     
     break;
     
