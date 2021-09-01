@@ -2,8 +2,8 @@
 #define __info_h__
 
 //this file is for information that is too large to reasonable fit cleanly in main.c
-#include <stdbool.h>
-#include <stdio.h>
+#include "imports.h"
+
 void MathModePrint() {
     printf("Math mode (when on) will set your first number to the answer of your previous number kinda like online calculator\n");
     printf("in math mode will will only get to set your first number once\n");

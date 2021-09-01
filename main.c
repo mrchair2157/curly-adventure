@@ -1,7 +1,5 @@
-#include <stdio.h>
-#include <stdbool.h>
-#include "info.h"
-#include "basic.h"
+#include "imports.h"
+
 
 
 //defining variables
@@ -20,7 +18,7 @@ int main()
 
 //processes mathmode
     MathModePrint();
-    scanf("%1c",&MathModeSelector);
+    MathModeSelector = getchar();
     if(MathModeSelector == 1)
     {
         MathMode = true;
@@ -127,5 +125,3 @@ int main()
 
     return printf("unknown fatal error :^(\n");
 }
-// 0x3A,0x88,0x28
-//may need this code at a later date if things don't work out

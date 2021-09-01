@@ -1,9 +1,7 @@
 #ifndef __basic_h__
 #define __basic_h__
+#include "imports.h"
 
-#include <math.h>
-#include <stdbool.h>
-#include <stdio.h>
 int operation(char operator,double n1,double n2){
     double n3;
     switch (operator) {
