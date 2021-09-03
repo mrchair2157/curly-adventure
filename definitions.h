@@ -6,14 +6,13 @@
 #include <stdio.h>
 #include <ncurses.h>
 #include <errno.h>
-#include "definitions.h"
 
 
 typedef struct
 {
 
     char retop;
-    int numbers[2];
+    int numbers[3];
     bool optrfl;
 } ret_op;
 
@@ -25,7 +24,7 @@ void help();
 
 int operation(char, double, double);
 
-int lookup(char* ,WINDOW*);
+int lookup(char ,WINDOW*);
 
 
 ret_op RETOPS(WINDOW*,int,int);

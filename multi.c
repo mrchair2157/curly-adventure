@@ -1,9 +1,3 @@
-#include <math.h>
-#include <stdlib.h>
-#include <stdbool.h>
-#include <stdio.h>
-#include <ncurses.h>
-#include <errno.h>
 #include "definitions.h"
 
 ret_op RETOPS(WINDOW *win,int y,int x)
@@ -34,7 +28,7 @@ ret_op RETOPS(WINDOW *win,int y,int x)
         wprintw(win,"please enter your first number, after this you will only be promoted for a second number: ");
     }
     //this is if mathmode is on changing it up
-    wscanw(win,"%lf",&x);
+    wscanw(win,"%lf",opreturn.number[0]);
     wprintw(win,"please enter your second number: ");
 
     return opreturn;

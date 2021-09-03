@@ -1,9 +1,3 @@
-#include <math.h>
-#include <stdlib.h>
-#include <stdbool.h>
-#include <stdio.h>
-#include <ncurses.h>
-#include <errno.h>
 #include "definitions.h"
 
 #define win window
@@ -20,30 +14,36 @@ bool ReturnOperatorModeState;
 bool enabled = true;
 int main(int argc, char **argv)
 {
-    //get argv as ints
-
-    //sets up the window
+    argc *= 2;
+    argv[0] = "sus";
     initscr();
-    cbreak();
     getmaxyx(stdscr,y,x);
-    WINDOW *window = newwin(y-3,x-3,0,0);
-    WINDOW *enter = newwin(y-5,5,0,0);
+    //get argv as ints
+    //double *cmd-args;
+    //sets up the window
+    cbreak();
+    WINDOW *window = newwin(y-1,x-1,0,0);
+    WINDOW *enter = newwin(3,x/2,y - 6,x/4);
     //set the window pointer in info.c
     winpoint(win);
     box(enter,0,0);
     box(win,0,0);
-    getch();
-    ret_op rt;
+    wrefresh(win);
+    //ret_op rt;
   //rt = RETOPS(win,y,x);
     wclear(win);
+    wclear(enter);
     //variable for getchar
-    char *getch;
+    char getch;
     while(1)
     {
+        cbreak();
+        wmove(enter,1,1);
         box(win,0,0);
+        box(enter,0,0);
         wrefresh(win);
+        wrefresh(enter);
         getch = wgetch(win);
-        wprintw(win,"%c",getch);
 
 
 
@@ -52,11 +52,15 @@ int main(int argc, char **argv)
         if(0 == lookup(getch,win))
         {
 
-            free(getch);
             endwin();
+            printf("%i, %i\n",y,y / 5);
             return 0;
         }
         wclear(win);
+        wclear(enter);
+
+        wprintw(enter,"%c",getch);
+        printf("%c",getch);
     }
 }
 

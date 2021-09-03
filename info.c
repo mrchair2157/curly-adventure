@@ -1,9 +1,3 @@
-#include <math.h>
-#include <stdlib.h>
-#include <stdbool.h>
-#include <stdio.h>
-#include <ncurses.h>
-#include <errno.h>
 #include "definitions.h"
 
 #define win window
