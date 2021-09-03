@@ -27,14 +27,11 @@ int main(int argc, char **argv)
     cbreak();
     getmaxyx(stdscr,y,x);
     WINDOW *window = newwin(y-3,x-3,0,0);
-    WINDOW *enter = newwin(y-5,5,0,0);
     //set the window pointer in info.c
     winpoint(win);
-    box(enter,0,0);
     box(win,0,0);
-    getch();
     ret_op rt;
-  //rt = RETOPS(win,y,x);
+  rt = RETOPS(win,y,x);
     wclear(win);
     //variable for getchar
     char *getch;

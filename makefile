@@ -1,17 +1,11 @@
-CC=gcc
-flags=-o
-extras=-Wall -Wextra -pedantic
+flags=-Wall -Wextra -pedantic -lncurses -lm
 
-celc: main.c info.h basic.h
-	$(CC) main.c basic.h info.h $(flags) celc $(extras)
 
+celc: main.c info.c basic.c lookup.c multi.c definitions.h makefile
+	gcc $(flags) -o celc main.c info.c basic.c lookup.c multi.c
 
 clean:
+	rm *.gch
 	rm *.o
 	rm celc
-git:
-	git pull
-	git status
-	sleep 15
-	git commit -a
-	git push origin main
+

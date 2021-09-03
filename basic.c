@@ -1,10 +1,16 @@
-#ifndef __basic_h__
-#define __basic_h__
-#include "imports.h"
+#include <math.h>
+#include <stdlib.h>
+#include <stdbool.h>
+#include <stdio.h>
+#include <ncurses.h>
+#include <errno.h>
+#include "definitions.h"
 
-int operation(char operator,double n1,double n2){
+int operation(char operator,double n1,double n2)
+{
     double n3;
-    switch (operator) {
+    switch (operator)
+    {
     case '+':
        n3 = n1 + n2;
        break;
@@ -22,4 +28,3 @@ int operation(char operator,double n1,double n2){
 
        return n3;
 }
-#endif
