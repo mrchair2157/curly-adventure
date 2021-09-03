@@ -6,6 +6,7 @@
 #include <stdio.h>
 #include <ncurses.h>
 #include <errno.h>
+#include <unistd.h>
 
 
 typedef struct
@@ -24,9 +25,8 @@ void help();
 
 int operation(char, double, double);
 
-int lookup(char ,WINDOW*);
+int lookup(char ,WINDOW*,WINDOW*);
 
 
-ret_op RETOPS(WINDOW*,int,int);
-
+ret_op RETOPS(WINDOW*,WINDOW*);
 #endif // DEFINITIONS_H_

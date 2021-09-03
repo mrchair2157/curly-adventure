@@ -30,37 +30,27 @@ int main(int argc, char **argv)
     box(win,0,0);
     wrefresh(win);
     //ret_op rt;
-  //rt = RETOPS(win,y,x);
+    //rt = RETOPS(win,enter);
     wclear(win);
     wclear(enter);
     //variable for getchar
     char getch;
     while(1)
     {
-        cbreak();
         wmove(enter,1,1);
         box(win,0,0);
         box(enter,0,0);
         wrefresh(win);
         wrefresh(enter);
-        getch = wgetch(win);
+        getch = wgetch(enter);
 
 
-
-
-
-        if(0 == lookup(getch,win))
+        if(0 == lookup(getch,win,enter))
         {
 
             endwin();
-            printf("%i, %i\n",y,y / 5);
             return 0;
         }
-        wclear(win);
-        wclear(enter);
-
-        wprintw(enter,"%c",getch);
-        printf("%c",getch);
     }
 }
 
