@@ -13,11 +13,6 @@ switch(lookup)
 
 
 
-
-
-
-
-
     case 'q':
         return 0;
         break;

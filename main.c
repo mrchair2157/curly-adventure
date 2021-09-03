@@ -15,7 +15,6 @@ bool enabled = true;
 int main(int argc, char **argv)
 {
     argc *= 2;
-    argv[0] = "sus";
     initscr();
     getmaxyx(stdscr,y,x);
     //get argv as ints
@@ -68,21 +67,8 @@ int main(int argc, char **argv)
 
 
 
-/*    ReturnOperatorModePrint();
-    ReturnOperatorModeSelector = getchar();
-    if(ReturnOperatorModeSelector == 1)
-    {
-        ReturnOperatorMode = true;
-    }
-    else
-    {
-        ReturnOperatorMode = false;
-    }
-    Numbers[0] = NumberSelection(ReturnOperatorMode);
-    scanf("%lf",&Numbers[1]);
-
 //main loop function
-    printf("h is for help\n");
+/*    printf("h is for help\n");
     for(int z = 1;z == 1;)
     {
 
