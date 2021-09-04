@@ -4,8 +4,6 @@
 
 
 //defining variables
-int x = 0;
-double Numbers[3] = {0,0,0};
 char operator;
 char ReturnOperatorModeSelector;
 int y,x;
@@ -14,7 +12,9 @@ bool ReturnOperatorModeState;
 bool enabled = true;
 int main(int argc, char **argv)
 {
+    //makes the complier give less and more usefull warngings
     argc *= 2;
+    argv[0] = "SUS";
     initscr();
     getmaxyx(stdscr,y,x);
     //get argv as ints
@@ -25,22 +25,15 @@ int main(int argc, char **argv)
     WINDOW *enter = newwin(3,x/2,y - 6,x/4);
     //set the window pointer in info.c
     winpoint(win);
-    box(enter,0,0);
-    box(win,0,0);
-    wrefresh(win);
-    //ret_op rt;
-    //rt = RETOPS(win,enter);
-    wclear(win);
-    wclear(enter);
+    re();
+        ret_op rt;
+    rt = RETOPS(win,enter);
+    re();
     //variable for getchar
     char getch;
     while(1)
     {
-        wmove(enter,1,1);
-        box(win,0,0);
-        box(enter,0,0);
-        wrefresh(win);
-        wrefresh(enter);
+        re();
         getch = wgetch(enter);
 
 

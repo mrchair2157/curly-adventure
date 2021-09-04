@@ -1,5 +1,15 @@
 #ifndef DEFINITIONS_H_
 #define DEFINITIONS_H_
+
+#define re();                                          \
+    {                                                  \
+        wmove(enter,1,1);                              \
+        box(window,0,0);                               \
+        box(enter,0,0);                                \
+        wrefresh(window);                              \
+        wrefresh(enter);                               \
+}
+
 #include <math.h>
 #include <stdlib.h>
 #include <stdbool.h>
@@ -7,6 +17,7 @@
 #include <ncurses.h>
 #include <errno.h>
 #include <unistd.h>
+#include "QOL.h"
 
 
 typedef struct
