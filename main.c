@@ -4,21 +4,18 @@
 
 
 //defining variables
-char operator;
-char ReturnOperatorModeSelector;
 int y,x;
 //enabled is for the help message that happens every five cycles of the loop.
-bool ReturnOperatorModeState;
-bool enabled = true;
 int main(int argc, char **argv)
 {
     //makes the complier give less and more usefull warngings
     argc *= 2;
     argv[0] = "SUS";
+    bool stop = false;
+    ret_op rt;
     initscr();
     getmaxyx(stdscr,y,x);
-    //get argv as ints
-    //double *cmd-args;
+    //get argv as doubles
     //sets up the window
     cbreak();
     WINDOW *window = newwin(y-1,x-1,0,0);
@@ -26,24 +23,20 @@ int main(int argc, char **argv)
     //set the window pointer in info.c
     winpoint(win);
     re();
-        ret_op rt;
     rt = RETOPS(win,enter);
     re();
     //variable for getchar
     char getch;
-    while(1)
+    while(stop == false)
     {
-        re();
         getch = wgetch(enter);
-
-
-        if(0 == lookup(getch,win,enter))
-        {
-
-            endwin();
-            return 0;
-        }
+        rt = lookup(getch,win,enter,rt,&stop);
+        re();
     }
+
+    endwin();
+    printf("\n");
+    return 0;
 }
 
 
@@ -51,64 +44,10 @@ int main(int argc, char **argv)
 
 
 //unused
+/*
 
-
-//math mode is gonna be if the first variable is gonna get charged or if the value gets returned
-//read info.h's mathmode function to learn what mathmode does
-
-//processes mathmode
-
-
-
-//main loop function
-/*    printf("h is for help\n");
-    for(int z = 1;z == 1;)
-    {
-
-//switch for selection
-        scanf("%c",&operator);
-//makes sure there is a mathmatical operator
-        if(operator == 0x2B || operator == 0x2D || operator == 0x2A || operator == 0x2F)
-        {
-            if(ReturnOperatorMode == true)
-            {
-
-                Numbers[2] = operation(operator,Numbers[0],Numbers[1]);
-                printf("%lf %c %lf = %lf\n",Numbers[0],operator,Numbers[1],Numbers[2]);
-                Numbers[0] = Numbers[2];
-            }
-            else
-            {
-                Numbers[2]= operation(operator,Numbers[0],Numbers[1]);
-                printf("%lf %c %lf = %lf\n",Numbers[0],operator,Numbers[1],Numbers[2]);
-            }
-        }
-//for the universal switch statements, quite, help, toggles,and number selection
         switch(operator)
         {
-            case 'h':
-                help();
-                x = -1;
-                break;
-
-
-            case 'q':
-                return 0;
-
-            case 'n':
-                if(ReturnOperatorMode == true)
-                {
-                    printf("please enter a number\n");
-                    scanf("%lf",&Numbers[1]);
-                }
-                else
-                {
-                    printf("please enter number your first number\n");
-                    scanf("%lf",&Numbers[0]);
-                    printf("please enter your second number\n");
-                    scanf("%lf",&Numbers[1]);
-                }
-                break;
 
             case 'p':
                 printf("number 1 %lf\n",Numbers[0]);

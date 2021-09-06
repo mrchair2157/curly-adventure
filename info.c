@@ -14,12 +14,4 @@ void winpoint(WINDOW *tmp)
 
 void help()
 {
-    wprintw(win,"h is for help and this is it.\n"                            );
-    wprintw(win,"q to quite.\n"                                              );
-    wprintw(win,"x is to toggle the Return Operator Mode after selection\n"             );
-    wprintw(win,"n is to change your numbers"                                );
-    wprintw(win,"+ for addition.\n"                                          );
-    wprintw(win,"- for subtraction.\n"                                       );
-    wprintw(win,"* for multiplication.\n"                                    );
-    wprintw(win,"/ for division.\n"                                          );
 }
