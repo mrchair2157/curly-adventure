@@ -1,19 +1,17 @@
-flags=-Wall -Wextra -pedantic -lm -lncurses -Werror
+CC=gcc
+flags=-o
+extras=-Wall -Wextra -pedantic
 
+celc: main.c info.h basic.h
+	$(CC) main.c basic.h info.h $(flags) celc $(extras)
 
-celc: objects/main.o objects/lookup.o objects/multi.o src/definitions.h makefile
-	gcc -o celc objects/main.o objects/lookup.o objects/multi.o $(flags)
-
-objects/main.o: src/main.c src/definitions.h
-	gcc -c -o objects/main.o src/main.c $(flags)
-
-objects/lookup.o: src/lookup.c src/definitions.h
-	gcc -c -o objects/lookup.o src/lookup.c $(flags)
-
-objects/multi.o: src/multi.c src/definitions.h
-	gcc -c -o objects/multi.o src/multi.c $(flags)
 
 clean:
-	rm objects/*.o
+	rm *.o
 	rm celc
-
+git:
+	git pull
+	git status
+	sleep 15
+	git commit -a
+	git push origin main
