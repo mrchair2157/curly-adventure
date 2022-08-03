@@ -1,2 +1,3 @@
 celc
 objects/*
+!objects/.gitkeep
