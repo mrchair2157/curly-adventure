@@ -1,5 +1,7 @@
 #include "definitions.h"
+#include <curses.h>
 //refacter RETOPS
+//nah bro get rid of it lol
 ret_op RETOPS(WINDOW *window,WINDOW *enter)
 {
     ret_op rt;
@@ -63,4 +65,34 @@ ret_op newnums(ret_op rt,WINDOW *window, WINDOW *enter)
     wclear(enter);
 
     return rt;
+}
+
+
+int wtd(str input, win *window,int *down)
+{
+    if( 'c' == *input.string )
+    {
+        if(strcmp("clear",input.string) == 0)
+        {
+            *down = 10;
+            wclear(window);
+            return 1;
+        }
+    }
+
+    if( 'q' == *input.string )
+    {
+        if(strcmp("quit",input.string) == 0)
+        {
+            return 2;
+        }
+    }
+
+    if(*down >= 15)
+    {
+        *down = 10;
+        wclear(window);
+    }
+
+    return 0;
 }
